@@ -1,0 +1,202 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1280 960" role="img">
+  <title>CTDE-PPO gain scheduling for GM-driven distributed optimization</title>
+  <desc>Architecture diagram showing decentralized RL gain scheduling for the GM-driven distributed optimization algorithm. Local observations feed a shared actor, a centralized critic trains under CTDE-PPO, actions schedule K1, K2, and Delta alpha_i online, and the original Theorem 1 convergence guarantee is preserved under admissible outputs.</desc>
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#090d16"/>
+      <stop offset="55%" stop-color="#0d1320"/>
+      <stop offset="100%" stop-color="#11182a"/>
+    </linearGradient>
+    <linearGradient id="panelGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#12182a"/>
+      <stop offset="100%" stop-color="#0f1421"/>
+    </linearGradient>
+    <linearGradient id="bannerGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1a2032"/>
+      <stop offset="100%" stop-color="#171c2c"/>
+    </linearGradient>
+    <linearGradient id="theoremGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1d1732"/>
+      <stop offset="100%" stop-color="#171126"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#dfe7ff"/>
+    </marker>
+    <style>
+      .bg { fill: url(#bgGrad); }
+      .glow1 { fill: #6fd7ff; opacity: 0.08; }
+      .glow2 { fill: #8b75ff; opacity: 0.10; }
+      .frame { fill: url(#panelGrad); stroke: #2a3550; stroke-width: 1.4; }
+      .banner { fill: url(#bannerGrad); stroke: #f0b64d; stroke-width: 1.2; }
+      .theorem { fill: url(#theoremGrad); stroke: #8e7bff; stroke-width: 1.4; }
+      .box { stroke-width: 1.2; rx: 18; ry: 18; }
+      .title {
+        font-family: Inter, "Segoe UI", Helvetica, Arial, sans-serif;
+        font-size: 30px;
+        font-weight: 800;
+        fill: #f5f7ff;
+      }
+      .subtitle {
+        font-family: Inter, "Segoe UI", Helvetica, Arial, sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        fill: #b8c3e6;
+      }
+      .bannerText {
+        font-family: Inter, "Segoe UI", Helvetica, Arial, sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        fill: #f9fbff;
+      }
+      .section {
+        font-family: Inter, "Segoe UI", Helvetica, Arial, sans-serif;
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: 0.3px;
+        fill: #eef2ff;
+      }
+      .sectionMuted {
+        font-family: Inter, "Segoe UI", Helvetica, Arial, sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        fill: #98a5cb;
+      }
+      .boxTitle {
+        font-family: Inter, "Segoe UI", Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 800;
+        fill: #f6f8ff;
+      }
+      .boxBody {
+        font-family: Inter, "Segoe UI", Helvetica, Arial, sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        fill: #c9d3ef;
+      }
+      .small {
+        font-family: Inter, "Segoe UI", Helvetica, Arial, sans-serif;
+        font-size: 11px;
+        font-weight: 500;
+        fill: #9dacd2;
+      }
+      .muted {
+        fill: #99a6c9;
+      }
+      .strokeTeal { stroke: #40d2c1; }
+      .strokeGold { stroke: #f4b94f; }
+      .strokePurple { stroke: #9a7bff; }
+      .strokeBlue { stroke: #6bb7ff; }
+      .strokeRed { stroke: #ff7e7a; }
+      .fillTeal { fill: #102c35; }
+      .fillGold { fill: #2f240f; }
+      .fillPurple { fill: #231938; }
+      .fillBlue { fill: #12283a; }
+      .fillRed { fill: #2d1516; }
+      .dash { stroke-dasharray: 8 7; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1280" height="960"/>
+  <ellipse class="glow1" cx="290" cy="110" rx="280" ry="140"/>
+  <ellipse class="glow2" cx="1000" cy="150" rx="280" ry="150"/>
+  <ellipse class="glow1" cx="1040" cy="720" rx="240" ry="170"/>
+
+  <text class="title" x="640" y="44" text-anchor="middle">CTDE-PPO gain scheduling for GM-driven distributed optimization</text>
+  <text class="subtitle" x="640" y="72" text-anchor="middle">Decentralized RL replaces fixed K1, K2 and alpha_dot_i = ||epsilon_i||^2 while preserving the Theorem 1 convergence story</text>
+
+  <rect class="banner box" x="70" y="90" width="1140" height="58" rx="16"/>
+  <text class="bannerText" x="102" y="112">
+    <tspan x="102" dy="0">Replace fixed K1, K2 and alpha_dot_i = ||epsilon_i||^2 with a decentralized RL policy</tspan>
+    <tspan x="102" dy="19">that schedules gains online, improving adaptation speed while preserving Theorem 1.</tspan>
+  </text>
+  <rect x="1068" y="103" width="118" height="30" rx="15" fill="#2b2542" stroke="#8f78ff" stroke-width="1"/>
+  <text class="small" x="1127" y="122" text-anchor="middle" fill="#cfc6ff">CTDE-PPO</text>
+
+  <rect class="frame" x="50" y="170" width="1180" height="160" rx="22"/>
+  <text class="section" x="78" y="198">Offline CTDE-PPO training</text>
+  <text class="sectionMuted" x="78" y="220">centralized critic sees all agents; the actor is shared across agents with decentralized execution</text>
+
+  <rect class="box fillBlue strokeBlue" x="80" y="238" width="320" height="90" rx="16"/>
+  <text class="boxTitle" x="240" y="264" text-anchor="middle">Global state s</text>
+  <text class="boxBody" x="240" y="285" text-anchor="middle">
+    <tspan x="240" dy="0">[s_1, ..., s_N]</tspan>
+    <tspan x="240" dy="17">aggregated from all agents during training</tspan>
+  </text>
+
+  <line x1="400" y1="283" x2="430" y2="283" stroke="#d7e0ff" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect class="box fillPurple strokePurple" x="430" y="238" width="390" height="90" rx="16"/>
+  <text class="boxTitle" x="625" y="264" text-anchor="middle">Centralized critic V(s)</text>
+  <text class="boxBody" x="625" y="285" text-anchor="middle">
+    <tspan x="625" dy="0">learns the global value from s = [s_1, ..., s_N]</tspan>
+    <tspan x="625" dy="17">drives the PPO policy update</tspan>
+  </text>
+
+  <line x1="625" y1="328" x2="625" y2="470" stroke="#d7e0ff" stroke-width="2" class="dash" marker-end="url(#arrow)"/>
+  <text class="small" x="640" y="352">PPO update</text>
+
+  <rect class="frame" x="50" y="360" width="1180" height="470" rx="22"/>
+  <text class="section" x="78" y="388">Decentralized execution</text>
+  <text class="sectionMuted" x="78" y="410">shared actor reused by all identical agents; only local information is needed at run time</text>
+
+  <rect class="box fillTeal strokeTeal" x="80" y="440" width="330" height="170" rx="16"/>
+  <text class="boxTitle" x="245" y="466" text-anchor="middle">Local observation s_i(t)</text>
+  <text class="boxBody" x="245" y="489" text-anchor="middle">
+    <tspan x="245" dy="0">[ epsilon_i(t), grad f_i(x_i),</tspan>
+    <tspan x="245" dy="16">  ||x_i - x_bar||, alpha_i, beta_i, t ]</tspan>
+    <tspan x="245" dy="17">epsilon_i already comes from (7c)</tspan>
+    <tspan x="245" dy="15">zero extra communication cost</tspan>
+  </text>
+
+  <line x1="410" y1="525" x2="450" y2="525" stroke="#d7e0ff" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect class="box fillGold strokeGold" x="450" y="470" width="300" height="110" rx="16"/>
+  <text class="boxTitle" x="600" y="496" text-anchor="middle">Shared actor pi_i(s_i)</text>
+  <text class="boxBody" x="600" y="519" text-anchor="middle">
+    <tspan x="600" dy="0">parameter sharing across agents</tspan>
+    <tspan x="600" dy="17">CTDE-PPO policy network</tspan>
+  </text>
+
+  <line x1="600" y1="470" x2="600" y2="410" stroke="#d7e0ff" stroke-width="2" class="dash" marker-end="url(#arrow)"/>
+
+  <line x1="750" y1="525" x2="790" y2="525" stroke="#d7e0ff" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect class="box fillGold strokeGold" x="790" y="440" width="220" height="170" rx="16"/>
+  <text class="boxTitle" x="900" y="466" text-anchor="middle">Action a_i(t)</text>
+  <text class="boxBody" x="900" y="489" text-anchor="middle">
+    <tspan x="900" dy="0">[K1_i(t), K2_i(t),</tspan>
+    <tspan x="900" dy="16"> Delta alpha_i(t)]</tspan>
+    <tspan x="900" dy="17">K_min &lt;= K1_i, K2_i &lt;= K_max</tspan>
+    <tspan x="900" dy="15">Delta alpha_i replaces ||epsilon_i||^2</tspan>
+  </text>
+
+  <line x1="1010" y1="525" x2="1050" y2="525" stroke="#d7e0ff" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect class="box fillBlue strokeBlue" x="1050" y="440" width="170" height="170" rx="16"/>
+  <text class="boxTitle" x="1135" y="466" text-anchor="middle">GM-driven DO law (7)</text>
+  <text class="boxBody" x="1135" y="489" text-anchor="middle">
+    <tspan x="1135" dy="0">x_i, v_i update online</tspan>
+    <tspan x="1135" dy="16">RL-scheduled gains enter</tspan>
+    <tspan x="1135" dy="17">(7a) - (7c)</tspan>
+    <tspan x="1135" dy="15">Theorem 1 guarantee retained</tspan>
+  </text>
+
+  <path d="M1135 610 L1135 640 L790 640 L790 672" fill="none" stroke="#d7e0ff" stroke-width="2" stroke-dasharray="8 7" marker-end="url(#arrow)"/>
+  <text class="small" x="1000" y="566">trajectory and cost signal</text>
+
+  <rect class="box fillRed strokeRed" x="470" y="615" width="320" height="115" rx="16"/>
+  <text class="boxTitle" x="630" y="641" text-anchor="middle">Reward r_i(t)</text>
+  <text class="boxBody" x="630" y="664" text-anchor="middle">
+    <tspan x="630" dy="0">-||x_i(t) - x*||</tspan>
+    <tspan x="630" dy="16">- lambda1 max(0, f(x(t)) - f(x*))</tspan>
+    <tspan x="630" dy="17">- lambda2 |K1_i|</tspan>
+    <tspan x="630" dy="15">used by the centralized critic</tspan>
+  </text>
+
+  <rect class="theorem box" x="50" y="850" width="1180" height="100" rx="20"/>
+  <text class="section" x="78" y="878">Theorem 1 remains the stability anchor</text>
+  <text class="sectionMuted" x="78" y="900">
+    <tspan x="78" dy="0">RL only schedules admissible gains; the asymptotic convergence proof is preserved.</tspan>
+    <tspan x="78" dy="18">This improves gain selection speed and lowers overshoot without changing the stability story.</tspan>
+  </text>
+</svg>
