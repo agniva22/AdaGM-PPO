@@ -33,7 +33,7 @@ python evaluate.py        # writes results/evaluation/summary.md
 python make_figures.py    # writes results/figures/*.eps
 ```
 
-To retrain all policies (11 runs, about 1 h each on a GPU) and evaluate:
+To retrain all policies (9 runs, about 1 h each on a GPU) and evaluate:
 
 ```bash
 bash run_all.sh [max_parallel_runs]
@@ -49,5 +49,4 @@ python adagm_do.py --mode rl --problem paper5 --seed 0 --outdir results/paper5_f
 |---|---|
 | `paper5_fixed_s{0..4}` | 5-agent network, nominal initial condition |
 | `paper5_random_s{0..2}` | 5-agent network, random initial conditions |
-| `paper5_xerr{05,10}_s0` | 5-agent network, 5% / 10% error in $x^*$, $f^*$ |
 | `ring10_fixed_s0` | 10-agent network |

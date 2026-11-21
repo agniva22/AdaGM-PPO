@@ -22,8 +22,6 @@ RUNS=(
   "paper5_random_s0|--seed 0 --random-init"
   "paper5_random_s1|--seed 1 --random-init"
   "paper5_random_s2|--seed 2 --random-init"
-  "paper5_xerr05_s0|--seed 0 --xstar-error 0.05"
-  "paper5_xerr10_s0|--seed 0 --xstar-error 0.10"
 )
 
 train_one() {

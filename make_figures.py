@@ -1,6 +1,6 @@
 """Fig. 3: states and global cost on the 5-agent network from the nominal x(t0).
 
-Output: results/figures/{rl,am12,am14,gm21,yue22}_{states,cost}.eps
+Output: results/figures/{rl,am14,gm21,yue22}_{states,cost}.eps
 """
 import json
 import subprocess
@@ -36,7 +36,6 @@ x_rl, c_rl, _ = ev.simulate_env(ev.load_run_args(run), actor, P, P.x0)
 # name: (states, cost, inset window [s])
 cases = {
     "rl": (x_rl, c_rl, (10.0, 60.0)),
-    "am12": (T["paper5|[12]"]["x"], T["paper5|[12]"]["cost"], (10.0, 60.0)),
     "am14": (T["paper5|[13]"]["x"], T["paper5|[13]"]["cost"], (40.0, 100.0)),
     "gm21": (T["paper5|[21]"]["x"], T["paper5|[21]"]["cost"], (40.0, 100.0)),
     "yue22": (T["paper5|[Yue22]"]["x"], T["paper5|[Yue22]"]["cost"], (40.0, 100.0)),
