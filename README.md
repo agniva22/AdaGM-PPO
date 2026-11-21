@@ -29,7 +29,7 @@ pip install -r requirements.txt
 The trained policies are included, so the table and figures can be reproduced without training:
 
 ```bash
-python evaluate.py        # writes results/evaluation/summary.md
+python evaluate.py        # prints the tables, writes results/evaluation/
 python make_figures.py    # writes results/figures/*.eps
 ```
 
